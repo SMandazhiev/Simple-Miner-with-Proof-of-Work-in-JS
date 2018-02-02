@@ -115,8 +115,8 @@ var mineBlock = (blockData) => {
     var previousBlock = getLatestBlock();
     var nextIndex = previousBlock.index + 1;
     var nonce = 0;
-    var nextHash = calculateHash(nextIndex, previousBlock.hash, nextTimestamp, blockData, nonce);
     var nextTimestamp = new Date().getTime() / 1000;
+    var nextHash = calculateHash(nextIndex, previousBlock.hash, nextTimestamp, blockData, nonce);
     while (nextHash.substring(0, difficulty) !== Array(difficulty + 1).join("0")){
      		nonce++;
 		nextTimestamp = new Date().getTime() / 1000;
